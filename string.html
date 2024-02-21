@@ -1,0 +1,74 @@
+<script>
+    var str1 = "<h1 style=\"background:red\">This is string</h1>";
+    var str2 = '<h2 style="background:green">This is string too</h2>';
+    var str3 = `
+        <div class="container">
+            <h3>This is string</h3>
+            ${str1}
+        </div>`;
+
+
+        document.write(str1);
+        document.write(str2);
+        document.write(str3);
+
+
+        // Операторы для строк
+
+
+        // + -> Конкатенация
+
+
+        document.write("Строка1"+" "+"Строка2");
+
+        var answer = 2*40;
+
+        document.write("<h5>результат: "+answer+"</h5>");
+        document.write(`<h5>результат: ${answer}</h5>`);
+
+
+        // Оператор Дополнения строки +=
+
+        var div1 = "<div class=\"mydiv\">";
+            div1+="<h1>test</h1>";
+            div1+="</div>";
+
+            document.write(div1);  
+            
+            console.log(div1.length);
+
+ /*
+
+ специальные символы
+            Код	Вывод
+\0	нулевой символ (символ NUL)
+\'	одинарная кавычка
+\"	двойная кавычка
+\\	обратный слеш
+\n	новая строка
+\r	возврат каретки
+\v	вертикальная табуляция
+\t	табуляция
+\b	забой
+\f	подача страницы
+\uXXXX	Юникод-символ
+ 
+ */
+
+var str5 = "Testing String";
+ var result = str3.toUpperCase();
+ var result = str3.toLowerCase();
+ var result = str5.split(' ');
+ var result = str5.substring(5,2);
+ var result = str5.slice(0,-2);
+
+
+ console.log(result);
+ document.write(result);
+
+
+// Посмотреть другие методы для работы со строками и числами
+// Произвести подсчет и вывести результат
+
+
+</script>
