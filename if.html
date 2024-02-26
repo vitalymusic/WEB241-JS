@@ -1,0 +1,71 @@
+<script>
+    let age = confirm("Солгасны ли вы");
+    if(age){ 
+    // let name = "Janis";
+    // let surname = "Rozitis";
+
+    // if(name.length > 3){
+    //     document.write("Your name is "+name);
+    // }else{
+    //     document.write("Your name is too short!");
+    // }
+
+    //  if(name && name.length > 3){
+    //     document.write("Your name is "+name);
+    //  } 
+     
+    //  if(name || surname){
+    //     document.write("Your name is "+name);
+    //     document.write("Your surname is "+surname);
+    //  }
+
+
+
+
+    // let number1 = prompt("Введите число!");
+    let number1=0;
+    // let number2 = 10;
+    // let number3 = 15
+
+
+    if(number1<=5){
+        document.write("Your number is small");
+    }else if(number1>5 && number1 <=10){
+        document.write("Your number is bigger");
+    }else if(number1 >10 && number1<=15){
+        document.write("Your number is bigest");
+    }else{
+        document.write("Your number is out of range");
+    }
+
+}
+
+
+let day = +prompt("Введите число!");
+let dayname = "";
+
+switch(day){
+    case 1: dayname="Monday";break;
+    case 2: dayname="Tuesday";break;
+    case 3: dayname="Wednesday";break;
+    case 4: dayname="Thursday";break;
+    case 5: dayname="Friday";break;
+    default: dayname="Other day";break;
+}
+
+
+
+document.write(dayname)
+
+
+
+for(number = 0;number <= 100;number++){
+        if(number % 5 != 0 ){
+            continue
+            // break
+        }
+        document.write(`<h3>${number}</h3>`);
+        
+    }
+
+</script>
