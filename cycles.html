@@ -1,0 +1,60 @@
+<script>
+    let number1 = 0;
+
+    // while(number1 <= 50){
+    //     document.write(`<h3>${number1*number1}</h3>`);
+    //     number1++;
+    // }
+
+    // do{
+    //     document.write(`<h3>${number1*number1}</h3>`);
+    //     number1++;
+    // }
+    // while(number1 > 50);
+
+    // for(number = 0;number <= 50;number++){
+    //     document.write(`<h3>${number*number}</h3>`);
+    // }
+
+
+
+
+    //     const arr1 = ["Mercedes","Volvo","BMW","AUDI"];
+
+    // for(i = 0;i < arr1.length ;i++){
+    //     document.write(`<h3>${arr1[i]}</h3>`);
+    // }
+
+
+
+
+
+    // Table
+// <table>
+    // <tr>
+        //  <td></td> 
+        // <td></td>  
+        // <td></td>  
+    // </tr>    
+// </table> 
+
+const users = [
+        ["Username","Email","Phone"], 
+        ["Vasja","vasilij@inbox.lv","234234234234234"],
+        ["Tanja","tajana@inbox.lv","4564564564564"],
+        
+];
+
+let output = "<table border=\"1\">";
+    for(let i = 0;i<users.length;i++){
+        output+="<tr>";
+            for(let j = 0; j<users[i].length;j++){
+                output+=`<td>${users[i][j]}</td>`
+            }
+        output+="</tr>";
+
+    }
+
+    console.log(output);
+    document.write(output);
+</script>
