@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="el1">Hello Javascript</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <div class="block1">
+    </div>
+
+    <script>
+        // DOM = Document Object Model
+
+
+        // console.log(document.body);
+        // console.log(document.title);
+
+        // document.title = "Hello JS";
+
+        // document.body.innerHTML = "<h1>Hello JS</h1>";
+        // document.body.innerHTML += "<h2>Hello JS2</h2>";
+        // document.body.innerText += "<h2>Hello JS2</h2>";
+
+
+        let h1 = document.getElementById("el1");
+        let p = document.getElementsByTagName("p");
+        let div1 = document.getElementsByClassName("block1");
+        let div2 = document.querySelector("div.block1");
+        let paragraphs = document.querySelectorAll("p");  
+
+        h1.innerText = "Hello World!";
+        p[0].innerText = h1.innerText;
+        div1[0].innerText = h1.innerText;
+
+
+        for(let i=0;i<paragraphs.length;i++){
+            paragraphs[i].innerText = `Paragraph ${i+1}!`;
+        }
+
+
+
+        console.log(div2,paragraphs);
+
+
+    </script>
+</body>
+</html>

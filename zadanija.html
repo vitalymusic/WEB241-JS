@@ -12,6 +12,66 @@
 
 
 
+function getType(variable){
+    return typeof variable;
+}
+
+
+// document.write(getType(3434343));
+// document.write(getType("String"));
+//document.write(getType(false));
+// document.write(getType([1,2,3,4,5]));
+
+
+
+// function getType(variable) {
+//     return typeof variable;
+// }
+
+
+
+function changeVars(var1,var2){
+
+
+
+    // let temp = var1;
+    //  var1 = var2;
+    //  var2 = temp;
+    // console.log(var1);
+
+    [var1,var2] = [var2,var1];
+
+    return  [var1,var2]
+
+}
+
+
+
+
+// document.write(changeVars(32,54));
+
+
+
+function arraySumm(array){
+    let out=0;
+
+    for(let i=0;i<array.length;i++){
+        out+=array[i]
+    }
+
+    return out;
+
+}
+
+document.write(arraySumm([1,2,3]));
+
+
+
+
+
+
+
+
 
 
 </script>
