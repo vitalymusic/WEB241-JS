@@ -139,9 +139,26 @@
             h1.onclick = function(){
                this.classList.toggle("heading");
             }
-
-
         }
+
+
+       let img2 =  document.createElement("img");
+       img2.src = galleryData[0];
+       img2.alt = "New Image";
+       img2.width = 300;
+       document.body.appendChild(img2); 
+       document.body.appendChild(img2); 
+
+       
+       document.body.insertBefore(img2,document.querySelector("#el1")); 
+
+       galleryDiv.onclick = function(){
+        this.remove();
+       }
+
+       select.removeChild(select.querySelector("option"));
+
+
     </script>
 </body>
 </html>
