@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="el1" onclick="">Hello Javascript</h1>
+
+    <div class="block1">
+
+    </div>
+
+    <input type="text" class="input1">
+    <button>test</button>
+
+
+    <div style=""></div>
+
+    <script>
+      let   h1 = document.querySelector("h1");
+      let div1 = document.querySelector(".block1");
+      
+    //   h1.onclick = function(){
+    //     div1.innerHTML = h1.innerHTML;
+    //   }
+
+    //   h1.onmouseover = function(){
+    //     div1.style.background = "#999999";
+    //   }
+
+    //   h1.onmouseleave = function(){
+    //     div1.style.background = "#9999ff";
+    //   } 
+
+
+    //   h1.ondblclick = function(){
+    //         // alert();
+    //   }
+    //   h1.onmousedown = (event)=>{
+    //     console.log(event);
+    //   }
+
+
+    //   document.onscroll = (event)=>{
+    //     console.log(event);
+    //   }
+
+    let input = document.querySelector("input"),
+        button = document.querySelector("button")
+
+
+        button.onclick = function(){
+            let val1 = input.value;
+            div1.innerHTML = `<h1>${val1}</h1>`;
+
+        }
+
+        input.oninput = function(){
+            let val1 = input.value;
+            div1.innerHTML = `<h1>${val1}</h1>`;
+        }
+
+
+        document.onkeyup = function(e){
+            console.log(e);
+            if(e.key=="Enter"){
+                document.body.style.background = "black";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
