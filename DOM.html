@@ -23,6 +23,13 @@
         <select name="" id=""></select>
     </form>
 
+    <a href="https://ss.com" title="testing attributes">SS.COM</a>
+
+
+
+    <h1>Gallery</h1>
+    <div class="gallery"></div>
+
     <script>
         // DOM = Document Object Model
 
@@ -43,6 +50,19 @@
         let div2 = document.querySelector("div.block1");
         let paragraphs = document.querySelectorAll("p");  
         let select = document.querySelector("form select");
+        let galleryDiv = document.querySelector(".gallery");
+
+        let galleryData = [
+            "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-james-wheeler-417074.jpg&fm=jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg",
+            "https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/1696691175374-MJY4VWB1KS8NU3DE3JK1/Sounds-of-Nature.jpg",
+            "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+            "https://www.bsr.org/images/heroes/bsr-focus-nature-hero.jpg",
+            "https://d19h8kn98xvxar.cloudfront.net/images/_hero/connectwithnature.jpg"
+        ];
+
+
+
 
 
         h1.innerText = "Hello World!";
@@ -57,12 +77,23 @@
 
 
         // console.log(div2,paragraphs);
-        for(let year = 1980;year < 2024;year++){
-                select.innerHTML = `
+        for(let year = 1980;year <= 2024;year++){
+                select.innerHTML += `
                     <option value="${year}">${year}</option>
                 `;
         }
 
+
+
+        for(let image of galleryData){
+            galleryDiv.innerHTML += `
+                <img src="${image}" alt="image" width="100%">
+            `; 
+        }
+
+        galleryDiv.style.display = "grid";
+        galleryDiv.style.gridTemplateColumns = "auto auto auto";
+        galleryDiv.style.gap = "10px";
 
 
 
