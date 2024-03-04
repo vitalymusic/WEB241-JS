@@ -16,6 +16,13 @@
     <div class="block1">
     </div>
 
+
+    <h1>Form</h1>
+
+    <form action="">
+        <select name="" id=""></select>
+    </form>
+
     <script>
         // DOM = Document Object Model
 
@@ -35,6 +42,8 @@
         let div1 = document.getElementsByClassName("block1");
         let div2 = document.querySelector("div.block1");
         let paragraphs = document.querySelectorAll("p");  
+        let select = document.querySelector("form select");
+
 
         h1.innerText = "Hello World!";
         p[0].innerText = h1.innerText;
@@ -47,7 +56,14 @@
 
 
 
-        console.log(div2,paragraphs);
+        // console.log(div2,paragraphs);
+        for(let year = 1980;year < 2024;year++){
+                select.innerHTML = `
+                    <option value="${year}">${year}</option>
+                `;
+        }
+
+
 
 
     </script>
