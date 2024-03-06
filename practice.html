@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-       button{
-        padding: 10px;
-       } 
 
-       .mobile_menu{
-        margin-top:30px;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        background-color: bisque;
-        width: 100px;
-        transform: translate(-150px,0px);
-        transition: all 500ms ease-in-out ;
-       }
-       .mobile_menu a{
-        display: block;
-       }
-       .active_menu{
-        transform: translate(0px,0px);
-        transition: all 500ms ease-in-out ;
-       }
+        button {
+            padding: 10px;
+        }
 
+        .mobile_menu {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: bisque;
+            width: 100px;
+            transform: translate(-150px, 0px);
+            transition: all 500ms ease-in-out;
+        }
+
+        .mobile_menu a {
+            display: block;
+        }
+
+        .active_menu {
+            transform: translate(0px, 0px);
+            transition: all 500ms ease-in-out;
+        }
+
+
+
+
+
+        /* Dialog */
+
+        dialog{
+            padding: 20px;
+            position: relative;
+            background-color: antiquewhite;
+        }
+
+        dialog .closeDialog{
+            position: absolute;
+            right:20px;
+            top:8px;
+            padding: 3px 5px;
+        }
 
     </style>
 
@@ -36,7 +58,7 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded",function(){
+        document.addEventListener("DOMContentLoaded", function () {
 
 
             // Мобильное меню
@@ -45,35 +67,56 @@
                 menuDiv = document.querySelector(".mobile_menu")
 
 
-                // menuButton.onclick = function(){
-                //     menuDiv.classList.toggle("active_menu")
-                // } 
-                
-                
-                menuButton.addEventListener("click",function(){
-                    menuDiv.classList.toggle("active_menu");
-                })
+            // menuButton.onclick = function(){
+            //     menuDiv.classList.toggle("active_menu")
+            // } 
 
 
-                
+            menuButton.addEventListener("click", function () {
+                menuDiv.classList.toggle("active_menu");
+            })
         })
+
 
     </script>
 </head>
+
 <body>
     <!-- Мобильное меню -->
-        <button>Menu</button>
-        <div class="mobile_menu ">
-            <a href="#">Menu 1</a>
-            <a href="#">Menu 2</a>
-            <a href="#">Menu 3</a>
-            <a href="#">Menu 4</a>
-        </div>
+    <button class="menu_button">Menu</button>
+    <button class="openDialog">Open Dialog</button>
+
+    <div class="mobile_menu ">
+        <a href="#">Menu 1</a>
+        <a href="#">Menu 2</a>
+        <a href="#">Menu 3</a>
+        <a href="#">Menu 4</a>
+    </div>
 
 
     <!-- Мобильное меню -->
 
     <!-- Диалоговое окно -->
+    <dialog>
+        <button class="closeDialog">x</button>
+
+        <form action="">
+            <div>
+                <label for="">Login:</label><br>
+                <input type="text" name="" id="">
+            </div>
+            <div>
+                <label for="">Password:</label><br>
+                <input type="password" name="" id=""><br><br>
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+
+        </form>
+    </dialog>
+
+
     <!-- Диалоговое окно -->
 
 
@@ -93,4 +136,5 @@
 
 
 </body>
+
 </html>
