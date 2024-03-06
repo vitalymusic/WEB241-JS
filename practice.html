@@ -51,6 +51,11 @@
             padding: 3px 5px;
         }
 
+        ::backdrop{
+            background-color: rgba(0, 0, 0, 0.556);
+
+        }
+
     </style>
 
 
@@ -63,7 +68,7 @@
 
             // Мобильное меню
 
-            let menuButton = document.querySelector("button"),
+            let menuButton = document.querySelector(".menu_button"),
                 menuDiv = document.querySelector(".mobile_menu")
 
 
@@ -75,6 +80,26 @@
             menuButton.addEventListener("click", function () {
                 menuDiv.classList.toggle("active_menu");
             })
+
+
+
+            let dialogButton = document.querySelector(".openDialog"),
+                dialog = document.querySelector("dialog"),
+                closeDialogButton = document.querySelector(".closeDialog");
+
+                dialogButton.addEventListener("click", function(){
+                    dialog.showModal();
+                })
+
+                closeDialogButton.addEventListener("click", function(){
+                    dialog.close();
+                })
+
+
+
+
+
+
         })
 
 
@@ -82,9 +107,11 @@
 </head>
 
 <body>
-    <!-- Мобильное меню -->
     <button class="menu_button">Menu</button>
     <button class="openDialog">Open Dialog</button>
+
+    <!-- Мобильное меню -->
+    
 
     <div class="mobile_menu ">
         <a href="#">Menu 1</a>
