@@ -56,6 +56,48 @@
 
         }
 
+
+
+        /* Lightbox */
+
+        .images{
+            width: 100%;
+            display: flex;
+            /* gap:20px; */
+            /* flex-wrap: wrap; */
+        }
+
+        .images img{
+            width: calc(100%/3);
+            display: block;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .lightbox{
+            position: fixed;
+            top:0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.567);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img{
+            /* width: 50%; */
+            max-height: 70%;
+            /* padding: 10px; */
+            border: 5px solid white;
+            box-shadow: 0px 0px 10px black;
+            border-radius: 10px;
+        }
+        .lightbox h3{
+            font-size: 30px;
+        }
+
     </style>
 
 
@@ -148,6 +190,17 @@
 
 
     <!-- Лайтбокс -->
+
+    <div class="images">
+        <img src="https://www.traveller.ee/blog/wp-content/uploads/2016/07/RigaOldTown_Droneview03.jpg" alt="Rīga">
+        <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/09/05/14/tallinn.jpg" alt="Tallin">
+        <img src="https://bigseventravel.com/wp-content/uploads/2019/08/Screenshot-2019-08-13-at-21.04.35.png" alt="Vilnius">
+    </div>
+
+    <div class="lightbox">
+        <img src="https://bigseventravel.com/wp-content/uploads/2019/08/Screenshot-2019-08-13-at-21.04.35.png" alt="image">
+        <h3>Image name</h3>
+    </div>
 
     <!-- Лайтбокс -->
 
