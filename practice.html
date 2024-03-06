@@ -11,22 +11,54 @@
        } 
 
        .mobile_menu{
+        margin-top:30px;
         display: flex;
         flex-direction: column;
         padding: 20px;
         background-color: bisque;
         width: 100px;
         transform: translate(-150px,0px);
+        transition: all 500ms ease-in-out ;
        }
        .mobile_menu a{
         display: block;
        }
        .active_menu{
         transform: translate(0px,0px);
+        transition: all 500ms ease-in-out ;
        }
 
 
     </style>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+
+
+            // Мобильное меню
+
+            let menuButton = document.querySelector("button"),
+                menuDiv = document.querySelector(".mobile_menu")
+
+
+                // menuButton.onclick = function(){
+                //     menuDiv.classList.toggle("active_menu")
+                // } 
+                
+                
+                menuButton.addEventListener("click",function(){
+                    menuDiv.classList.toggle("active_menu");
+                })
+
+
+                
+        })
+
+    </script>
 </head>
 <body>
     <!-- Мобильное меню -->
