@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>Tasks</h1>
+      
+      <input type="text" name="" id=""><button>Add task</button>
+      <ul>
+
+      </ul>  
+
+
+
+      <script>
+        let ul = document.querySelector("ul"),
+            input = document.querySelector("input"),
+            button = document.querySelector("button"),
+            tasks = [];
+
+        button.addEventListener("click",function(){
+            tasks.push(input.value);
+            input.value="";
+            showTasks();
+        })
+
+        function showTasks(){
+                ul.innerHTML = "";
+             tasks.forEach(function(item){
+                ul.innerHTML+=`<li>${item}</li>`;
+             })   
+        }
+
+
+
+      </script>
+
+</body>
+</html>

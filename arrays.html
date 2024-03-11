@@ -1,0 +1,91 @@
+<script>
+    let array1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+    let [a,b,,c] = array1;
+    let array2 = [];
+
+
+    // push ->
+
+
+    array1.push(10);
+    array2.push("Andrey");
+
+    // shift()   <---
+
+
+    array1.shift(450);
+
+    array1.pop();
+    array2.pop();
+    array2.unshift();
+
+    console.log(array1.length);
+    console.log(array2.length);
+
+    array2.push("Andrey");
+    array2.push("Andrey");
+    array2.push("Andrey");
+    array2.push("Andrey");
+    array2.push("Andrey");
+    array2.push("Andrey");
+
+
+
+
+    // let array3 = array1.concat(array2);
+
+    let array3 = [...array1,...array2]
+    // spread operator ...
+    
+
+    // destructure
+
+    console.log(a,b,c);
+
+
+
+    // let array4 = array3.slice(3,6);
+    let array4 = array3.splice(3,3);
+
+
+    // console.log(array1,array2);
+
+    console.log(array4);
+
+    let sum=0;
+    array1.forEach(function(item,index,arr){
+        sum += item;
+    })
+
+    // map()
+
+    newArr = array1.map(function(item){
+         return item*10;
+    })
+
+
+    // find()
+    // findIndex()
+    result = array1.find(function(item){
+        if(item == 100){return item}
+    })
+
+    result = array1.findIndex(function(item){
+        if(item == 7){return item}
+    })
+
+
+
+    // filter
+
+    result = array1.filter(function(item){
+        if(item >= 100){return item}
+    });
+    result = array1.sort();
+    result = array1.sort(function(a,b){
+        return a - b;
+    })
+
+
+    console.log(result);
+</script>
