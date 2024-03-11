@@ -266,6 +266,34 @@
 
 
 
+                    // tabs
+
+
+                    let tabButtons = document.querySelectorAll(".tabs a");
+                    let tabsDiv = document.querySelectorAll(".tab");
+
+
+
+                    function openTab(tabId){
+                        for(tab of tabsDiv){
+                            tab.style.display = "none";
+                        }
+
+                        document.querySelector("#"+tabId).style.display = "block";
+                    }
+
+
+                    for(tabButton of tabButtons){
+                        tabButton.addEventListener("click", function(event){
+                            event.preventDefault();
+                            let id = event.target.href.substr(-4);
+                            openTab(id);
+                        })
+                    }
+
+                    tabButtons[0].click();
+                  
+
 
         })
 
