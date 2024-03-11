@@ -118,6 +118,7 @@
             width: calc(900px*6);
             position: relative;
             left:-700px;
+            transition: all 1s ease-in-out;
         }
         .slider .slide{
             box-sizing: border-box;
@@ -219,16 +220,19 @@
                     let left = -700;
 
                     rightButton.addEventListener("click",function(){
+                        if(left > -4564.295){
                         left-=(762.859+10);
                         console.log(left);
                         slideWrapper.style.left = left+"px";
+                    }
                     })
 
                     leftButton.addEventListener("click",function(){
-                        // if(){}
+                        if(left < -700.0000000000003){
                         left+=(762.859+10);
                         console.log(left);
                         slideWrapper.style.left = left+"px";
+                    }
                     })
 
 
@@ -319,7 +323,27 @@
     <!-- Слайдер -->
 
     <!-- Табы -->
+        <div class="tabs">
+            <a href="#tab1">Tab1</a>
+            <a href="#tab2">Tab2</a>
+            <a href="#tab3">Tab3</a>
+        </div>
+        <div class="tabs-content">
+            <div class="tab" id="tab1">
+                <h2>Tab 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, id. Impedit odit numquam nostrum, excepturi mollitia porro magni adipisci quod ratione labore vero repudiandae saepe, veniam at quos voluptas quisquam!</p>
+            </div>
+            <div class="tab" id="tab2">
+                <h2>Tab 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, id. Impedit odit numquam nostrum, excepturi mollitia porro magni adipisci quod ratione labore vero repudiandae saepe, veniam at quos voluptas quisquam!</p>
+            </div>
+            <div class="tab" id="tab3">
+                <h2>Tab 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, id. Impedit odit numquam nostrum, excepturi mollitia porro magni adipisci quod ratione labore vero repudiandae saepe, veniam at quos voluptas quisquam!</p>
+            </div>
 
+        </div>
+        
     <!-- Табы -->
 
 
