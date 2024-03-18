@@ -93,7 +93,7 @@
                 return answer.json();
             }).then(function (data) {
                 document.body.innerHTML += JSON.stringify(data);
-            }).error(function(error){
+            }).catch(function(error){
                 return console.log(error)
             })
 
