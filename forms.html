@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Forms</title>
 
     <style>
-        .error{
-            border-color:red;
+        .error {
+            border-color: red;
         }
     </style>
 </head>
+
 <body>
     <form action="">
         <label>Name:</label><br>
@@ -41,75 +43,66 @@
 
 
 
-        document.forms[0][1].onclick = function(event){
+        document.forms[0][1].onclick = function (event) {
             event.preventDefault();
-            if(document.forms[0][0].value.length < 4){
+            if (document.forms[0][0].value.length < 4) {
                 errorDiv.innerHTML = errorText;
                 document.forms[0][0].classList.add("error")
                 return false;
             }
             let inputText = document.forms[0][0].value;
-            document.forms[0][2].innerHTML+=`
+            document.forms[0][2].innerHTML += `
                 <option value="${inputText}">${inputText}</option>`;
-                document.forms[0][0].value = "";
-                errorDiv.innerHTML = "";
-                document.forms[0][0].classList.remove("error");
+            document.forms[0][0].value = "";
+            errorDiv.innerHTML = "";
+            document.forms[0][0].classList.remove("error");
         }
 
-        
+
         let maxSymbols = 500;
         symbolCount.innerHTML = `Осталось: ${maxSymbols} символов`
-        document.forms[0][3].oninput = function(){
+        document.forms[0][3].oninput = function () {
             let count = maxSymbols - this.value.length;
             symbolCount.innerHTML = `Осталось: ${count} символов`
         }
-        document.forms[0][4].onchange = function(event){
-            if(event.target.checked){
+        document.forms[0][4].onchange = function (event) {
+            if (event.target.checked) {
                 document.forms[0][5].removeAttribute("disabled");
-            }else{
-                document.forms[0][5].setAttribute("disabled","");
+            } else {
+                document.forms[0][5].setAttribute("disabled", "");
             }
         }
 
-        document.forms[0][5].onclick = function(event){
+        document.forms[0][5].onclick = function (event) {
             event.preventDefault();
-            let data  =  new FormData(form);
-            data.append("hidden","saveUser");
+            let data = new FormData(form);
+            data.append("hidden", "saveUser");
             data.delete("name");
 
-            let output;
-             output+="{";
+            let output = {};
             for (const [key, value] of data) {
-            output += `${key}: ${value},\n`;
-                }
-            output+="}";
-
-            testData = {
-                title:"test",
-                body:"test2",
-                userId:366
+                output[key] = value;
             }
-
-            console.log(output)
-            fetch("https://jsonplaceholder.typicode.com/posts",{
-                method:"POST",
-                body:JSON.stringify(testData),
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                body: JSON.stringify(output),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
-                 },
-            }).then(function(answer){
+                },
+            }).then(function (answer) {
                 return answer.json();
-            }).then(function(data){
-                document.body.innerHTML +=data ;
+            }).then(function (data) {
+                document.body.innerHTML += JSON.stringify(data);
             })
 
-            }
+        }
 
 
         // console.log(document.forms[0]);
 
 
-            
+
     </script>
 </body>
+
 </html>
