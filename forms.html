@@ -27,7 +27,7 @@
         <div class="error">
 
         </div>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" disabled>
     </form>
 
 
@@ -60,12 +60,21 @@
         let maxSymbols = 500;
         symbolCount.innerHTML = `Осталось: ${maxSymbols} символов`
         document.forms[0][3].oninput = function(){
-            let count = maxSymbols - document.forms[0][3].value.length;
+            let count = maxSymbols - this.value.length;
             symbolCount.innerHTML = `Осталось: ${count} символов`
+        }
+        document.forms[0][4].onchange = function(event){
+            if(event.target.checked){
+                document.forms[0][5].removeAttribute("disabled");
+            }else{
+                document.forms[0][5].setAttribute("disabled","");
+            }
         }
 
 
         console.log(document.forms[0]);
+
+
 
     </script>
 </body>
