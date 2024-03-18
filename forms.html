@@ -78,21 +78,29 @@
             data.delete("name");
 
             let output;
-
+             output+="{";
             for (const [key, value] of data) {
-            output += `${key}: ${value}\n`;
+            output += `${key}: ${value},\n`;
+                }
+            output+="}";
+
+            testData = {
+                title:"test",
+                body:"test2",
+                userId:366
             }
 
             console.log(output)
-
             fetch("https://jsonplaceholder.typicode.com/posts",{
                 method:"POST",
-                body:data,
+                body:JSON.stringify(testData),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                  },
             }).then(function(answer){
-                console.log(answer)
+                return answer.json();
+            }).then(function(data){
+                document.body.innerHTML +=data ;
             })
 
             }
@@ -101,7 +109,7 @@
         // console.log(document.forms[0]);
 
 
-
+            
     </script>
 </body>
 </html>
